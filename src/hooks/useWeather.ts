@@ -45,6 +45,7 @@ export default function useWeather() {
     const apiKey = import.meta.env.VITE_API_KEY;
     const geoBaseUri = import.meta.env.VITE_GEO_BASE_URI;
     const weatherBaseUri = import.meta.env.VITE_WEATHER_BASE_URI;
+    setNotFound(false);
     setLoading(true);
     setWeather(initialStateWeather);
     try {
@@ -54,7 +55,6 @@ export default function useWeather() {
       // Check if exist
       if (!data[0]) {
         setNotFound(true);
-        console.log("clima no encontrado");
         return;
       }
       const lat = data[0].lat;
