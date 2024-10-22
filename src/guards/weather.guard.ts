@@ -1,4 +1,4 @@
-import { DataType, Weather } from "../types";
+import { WeatherDataType, Weather } from "../types";
 
 function isCoord(obj: unknown): boolean {
   return (
@@ -54,10 +54,10 @@ function isMain(obj: unknown): boolean {
 export const isWeatherResponse = (weather: unknown): weather is Weather => {
   return (
     Boolean(weather) &&
-    typeof (weather as DataType).base === "string" &&
-    typeof (weather as DataType).name === "string" &&
-    isCoord((weather as DataType).coord) &&
-    isWeather((weather as DataType).weather[0]) &&
-    isMain((weather as DataType).main)
+    typeof (weather as WeatherDataType).base === "string" &&
+    typeof (weather as WeatherDataType).name === "string" &&
+    isCoord((weather as WeatherDataType).coord) &&
+    isWeather((weather as WeatherDataType).weather[0]) &&
+    isMain((weather as WeatherDataType).main)
   );
 };

@@ -28,6 +28,7 @@
   background-color: var(--primary);
   opacity: 0.8;
   border: none;
+  border-radius: 1rem;
   color: var(--white);
   font-weight: 700;
   font-size: 1.4rem;

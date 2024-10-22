@@ -8,7 +8,7 @@ export type CountryType = {
   name: string;
 };
 
-export type DataType = {
+export type WeatherDataType = {
   coord: Coord;
   weather: Weather[];
   base: string;
